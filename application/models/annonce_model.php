@@ -437,7 +437,7 @@ class Model_annonce extends Model {
 		$ordermilieu = array();
 
 		if(empty($str))
-			return $this->getAnnonces(false, false, $page);
+			return $this->getAnnonces(false, false, 0);
 		
 		$tt = preg_split('/[\s]+/', $slug);
 		$tt_sav = $tt;

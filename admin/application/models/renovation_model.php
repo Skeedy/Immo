@@ -340,6 +340,24 @@ class Model_renovation extends Model{
                 $new_images[] = $t;
             }
         }
+
+        //anciennes images
+        $renovation->comparaisons = json_decode($renovation->comparaisons);
+        $old_images = array();
+        foreach($renovation->comparaisons as $v)
+            $old_images[] = $v->image;
+
+        //nouvel index de début pour les nouvelles images
+        $index = 0;
+        if(!empty($old_images)) {
+            for($i = 0; $i < count($old_images); $i++) {
+                if(preg_match('/^(\d+)\.jpg(.*)$/', $old_images[$i], $matches)) {
+                    if($matches[1] + 1 > $index)
+                        $index = $matches[1] + 1;
+                }
+            }
+        }
+
         if($p['comparaisons']) {
             for ($i = 0; $i < count($p['comparaisons']); $i++) {
                 //si image déjà présente
@@ -357,6 +375,7 @@ class Model_renovation extends Model{
                         $old_dir[] = $t['dirname'];
                     foreach (array(
                                  array(_IMG_SM_WIDTH, _IMG_SM_HEIGHT, 'sm'),
+                                 array(_IMG_MD_WIDTH, _IMG_MD_HEIGHT, 'md'),
                                  array(_IMG_BA_WIDTH, _IMG_BA_HEIGHT, 'lg')
                              ) as $dim) {
                         $im = PhpThumbFactory::create($_dir_comparaison . $new_name);

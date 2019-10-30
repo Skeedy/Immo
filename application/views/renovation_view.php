@@ -36,7 +36,7 @@
         	?>
         	<div class="my-5 py-3">
         		<?php
-        		for($i = 0; $i <= floor(count($_annonce->comparaisons) / 2); $i+=2 ) {
+        		for($i = 0; $i < count($_annonce->comparaisons); $i+=2 ) {
         			?>
         			<div class="twentytwenty-container">
         				<img src="<?php echo _ROOT.$db_renovation->getRenovationDirComp($_annonce->id).'lg_'.$_annonce->comparaisons[$i]->image; ?>" alt="">
