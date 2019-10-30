@@ -1,0 +1,20 @@
+RewriteEngine On
+RewriteBase /lapalus
+
+RewriteCond %{HTTP_HOST} ^clever-immobilier.com$
+RewriteRule ^(.*) https://www.clever-immobilier.com/$1  [QSA,L,R=301]
+
+#RewriteCond %{HTTPS} off
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
+RewriteRule	^sitemap.xml$	sitemap.php	[L]	
+
+RewriteRule	^feed.xml$	feed.php [L]
+
+
+RewriteCond %{REQUEST_URI} !^/index\.php
+RewriteCond %{REQUEST_URI} (/[^.]*|\.(php|html?|feed|pdf|raw))$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^(.*)$	index.php?q=$1&%1 [L]

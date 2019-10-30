@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		body {
+			width:19.2cm;
+			color: #646464;
+			font-size: 12px;
+		}
+		.page {
+			position: relative;
+			height: 25cm;
+		}
+		header {
+			text-align: center;
+			height: 2.5cm;
+		}
+		.body {
+			height: 22cm;
+		}
+		h1 {
+			font-size: 18px;
+			font-weight: bold;
+			text-align: center;
+			text-transform: uppercase;
+			border-bottom: 1px solid #646464;
+			margin: 0 0 .5cm;
+			padding: 0 0 .3cm;
+		}
+		h2 {
+			font-size: 13px;
+			font-weight: bold;
+			text-transform: uppercase;
+			margin: 0;
+			padding: 0;
+		}
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+		table td {
+			border: none;
+		}
+		table.border {
+			margin-bottom: .5cm;
+		}
+		table.border td {
+			border: 1px solid #646464;
+		}
+		hr {
+			border: none;
+			height: 1px;
+			background-color: #646464;
+		}
+	</style>
+</head>
+<body>
+<div class="page">
+	<header>
+		<img src="data:image/png;base64,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" alt="">
+	</header>
+	<div class="body">
+		<h1>Mon bien idéal</h1>
+		<h2>Vos coordonnées</h2>
+		<div>Nom : {$nom}</div>
+		<div>Prénom : {$prenom}</div>
+		<div>Téléphone : {$telephone}</div>
+		<div>Email : {$email}</div>
+		<br>
+		<h2>Votre achat</h2>
+		<div>Type de bien : {$type}</div>
+		<div>Type d'achat : {$type_achat}</div>
+		<br>
+		<h2>Caractéristiques</h2>
+		<div>Surface habitable : {$surface}</div>
+		<div>Nombre de pièces : {$pieces}</div>
+		<div>Nombre de chambres minimum : {$chambres}</div>
+		<div>Type d'immeuble : {$type_immeuble}</div>
+		<div>Ascenseur  : {$ascenseur}</div>
+		<div>Sortie extérieure : {$sortie_exterieure}</div>
+		<div>J'accepte un rez-de-chaussée : {$rdc}</div>
+		<div>Commentaire : {$commentaire}</div>
+		<br>
+		<h2>Localisation</h2>
+		<div>Vos quartiers de préférence : {$quartiers}</div>
+		<div>Vos précisions : {$precisions}</div>
+		<br>
+		<h2>Financement</h2>
+		<div>Budget maximum : {$budget_max}</div>
+		<div>Montant honoraire agence inclus : {$honoraire_inclus}</div>
+		<div>Travaux inclus : {$travaux_inclus}</div>
+		<div>Droits de mutation inclus : {$droits_mutation_inclus}</div>
+		<div>Ce budget a été validé par votre banque : {$budget_valide}</div>
+		<div>Achetez-vous en... : {$achat_personne}</div>
+		<div>Disposez-vous d'un apport ? {$apport}</div>
+		<br>
+		<h2>Votre recherche</h2>
+		<div>Quand a débuté votre recherche ? {$debut_recherche}</div>
+		<div>Nombre de visites réalisées : {$debutnb_visites_recherche}</div>
+		<br>
+		<h2>Vous êtes</h2>
+		<div>Êtes-vous tous en CDI ? {$cdi}</div>
+		<div>Quel est le nombre d'acheteurs ? {$nb_acheteurs}</div>
+	</div>
+</div>
+<div class="page">
+	<header>
+		<img src="data:image/png;base64,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" alt="">
+	</header>
+	<div class="body">
+		<h1>Suivi des visites</h1>
+		<table>
+			<tr>
+				<td width="50%">Adresse :</td>
+				<td width="25%">Date :</td>
+				<td width="25%">Heure :</td>
+			</tr>
+		</table>
+		<br>
+		<table class="border">
+			<tr>
+				<td align="center">Points positifs</td>
+				<td align="center">Points négatifs</td>
+			</tr>
+			<tr>
+				<td height="70"></td>
+				<td height="70"></td>
+			</tr>
+		</table>
+		<div>Remarques :</div>
+		<br><br><br>
+		<hr>
+		<br>
+		<table>
+			<tr>
+				<td width="50%">Adresse :</td>
+				<td width="25%">Date :</td>
+				<td width="25%">Heure :</td>
+			</tr>
+		</table>
+		<br>
+		<table class="border">
+			<tr>
+				<td align="center">Points positifs</td>
+				<td align="center">Points négatifs</td>
+			</tr>
+			<tr>
+				<td height="70"></td>
+				<td height="70"></td>
+			</tr>
+		</table>
+		<div>Remarques :</div>
+		<br><br><br>
+		<hr>
+		<br>
+		<table>
+			<tr>
+				<td width="50%">Adresse :</td>
+				<td width="25%">Date :</td>
+				<td width="25%">Heure :</td>
+			</tr>
+		</table>
+		<br>
+		<table class="border">
+			<tr>
+				<td align="center">Points positifs</td>
+				<td align="center">Points négatifs</td>
+			</tr>
+			<tr>
+				<td height="70"></td>
+				<td height="70"></td>
+			</tr>
+		</table>
+		<div>Remarques :</div>
+		<br><br><br>
+		<hr>
+	</div>
+</div>
+<div class="page">
+	<header>
+		<img src="data:image/png;base64,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" alt="">
+	</header>
+	<div class="body">
+		<table>
+			<tr>
+				<td width="50%">Adresse :</td>
+				<td width="25%">Date :</td>
+				<td width="25%">Heure :</td>
+			</tr>
+		</table>
+		<br>
+		<table class="border">
+			<tr>
+				<td align="center">Points positifs</td>
+				<td align="center">Points négatifs</td>
+			</tr>
+			<tr>
+				<td height="70"></td>
+				<td height="70"></td>
+			</tr>
+		</table>
+		<div>Remarques :</div>
+		<br><br><br>
+		<hr>
+		<br>
+		<table>
+			<tr>
+				<td width="50%">Adresse :</td>
+				<td width="25%">Date :</td>
+				<td width="25%">Heure :</td>
+			</tr>
+		</table>
+		<br>
+		<table class="border">
+			<tr>
+				<td align="center">Points positifs</td>
+				<td align="center">Points négatifs</td>
+			</tr>
+			<tr>
+				<td height="70"></td>
+				<td height="70"></td>
+			</tr>
+		</table>
+		<div>Remarques :</div>
+		<br><br><br>
+		<hr>
+		<br>
+		<table>
+			<tr>
+				<td width="50%">Adresse :</td>
+				<td width="25%">Date :</td>
+				<td width="25%">Heure :</td>
+			</tr>
+		</table>
+		<br>
+		<table class="border">
+			<tr>
+				<td align="center">Points positifs</td>
+				<td align="center">Points négatifs</td>
+			</tr>
+			<tr>
+				<td height="70"></td>
+				<td height="70"></td>
+			</tr>
+		</table>
+		<div>Remarques :</div>
+		<br><br><br>
+		<hr>
+	</div>
+</div>
+</body>
+</html>
